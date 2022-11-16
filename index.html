@@ -1,7 +1,14 @@
 <!DOCTYPE HTML>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
 
 <head>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+
     <title>Publish Web</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -11,12 +18,13 @@
     <link rel="stylesheet" href="./libs/css/app.css" type="text/css" />
     <script type="text/javascript" src="./libs/js/app/app.bizagi.min.js"></script>
     <link href="./libs/css/google-opensans.css" rel="stylesheet">
+
 </head>
 
 <body class="off-canvas hide-extras">
 
-    
-<!-- *****************************************************************************
+
+    <!-- *****************************************************************************
  process-viewer
  @author: UX-Team
  @version: 0.1.0
@@ -25,13 +33,52 @@
 ***************************************************************************** /
  -->
 
-    <div class="biz-ex-wrapper row"></div>
+    <div class="biz-ex-wrapper row">
+        <footer class="bg-dark text-center text-white fixed-bottom">
+            <!-- Grid container -->
+            <div class="container p-4 pb-0">
+              <!-- Section: Social media -->
+              <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/ivan.hinojsatovar" role="button"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+          
+        
+          
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/ivantovarssj/" role="button"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+          
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/ivan-tovar-96b5b5225/" role="button"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a><br>
+                    Creado por: Ivan Hinojosa Tovar
+              </section>
+              <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+          
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2022 Copyright:
+              <a class="text-white" href="http://www.itpachuca.edu.mx/index.php">Instituto Tecnologico de Pachuca</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+
+    </div>
 
     <div class="alert-box biz-ex-supported">
         <p id="biz-ex-support"></p>
-        <a href="http://www.google.com/intl/es-419/chrome/" title="Chrome" target="_blank"><span class="biz-ex-iconbrowser-chrome"></span></a>
-        <a href="http://www.mozilla.org/en-US/firefox/new/" title="Firefox" target="_blank"><span class="biz-ex-iconbrowser-firefox"></span></a>
-        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" title="IE 9+" target="_blank"><span class="biz-ex-iconbrowser-ie"></span></a>
+        <a href="http://www.google.com/intl/es-419/chrome/" title="Chrome" target="_blank"><span
+                class="biz-ex-iconbrowser-chrome"></span></a>
+        <a href="http://www.mozilla.org/en-US/firefox/new/" title="Firefox" target="_blank"><span
+                class="biz-ex-iconbrowser-firefox"></span></a>
+        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" title="IE 9+" target="_blank"><span
+                class="biz-ex-iconbrowser-ie"></span></a>
     </div>
     <script type="text/javascript" src="./libs/js/app/app.ie8detect.js"></script>
 
@@ -100,12 +147,12 @@
     <script src="./libs/js/app/process-viewer.min.js"></script>
 
 
-<!-- 
+    <!-- 
     @name:          Zoomer Template
     @view:          Bizagi.App.Views.DiagramView
     @description:   Diagram Process / Zoom Plugin Markup
 -->
-<script type="text/x-jquery-tmpl" id="ZoomerViewTmpl">
+    <script type="text/x-jquery-tmpl" id="ZoomerViewTmpl">
     <div class="zoom-container" data-zoomcontainer>
         <div data-zoomcontent draggable="true">
         </div>
@@ -127,24 +174,24 @@
 </script>
 
 
-<!-- 
+    <!-- 
     @name:      Carousel ( Recursive Function for SubProcess Images )
     @view:      Bizagi.App.Views.NavigationView
     @role:      recursive section
     @function:  Bizagi.Util.renderSubPagesRecursive(idTemplate, data)
 -->
-<script type="text/x-jquery-tmpl" id="CarouselSubProcessViewTmpl">
+    <script type="text/x-jquery-tmpl" id="CarouselSubProcessViewTmpl">
         <!-- carousel -->
         {{tmpl(this.data) Bizagi.Util.getTemplate("CarouselSubPagesLI")}}
         {{html Bizagi.Util.renderSubPagesRecursive('CarouselSubProcessTmpl',this.data, true)}}
 </script>
-<!-- 
+    <!-- 
     @name:      Navigation View ( Iterate Image Section )
     @view:      Bizagi.App.Views.NavigationView
     @role:      Image Process Iteration
 -->
-<script type="text/x-jquery-tmpl" id="CarouselSubProcessTmplList">
-    
+    <script type="text/x-jquery-tmpl" id="CarouselSubProcessTmplList">
+
     {{if subPages}}
             {{each subPages}}
                 {{tmpl($value) Bizagi.Util.getTemplate("CarouselSubPagesLI")}}
@@ -152,7 +199,7 @@
     {{/if}}
 </script>
 
-<script type="text/x-jquery-tmpl" id="CarouselSubPagesLI">
+    <script type="text/x-jquery-tmpl" id="CarouselSubPagesLI">
         <li class="biz-ex-carousel-columns">
             <a href="diagram/${id}" class="biz-ex-navigate biz-ex-navigate-carousel">
                 <figure class="biz-ex-diagram">
@@ -166,12 +213,12 @@
 </script>
 
 
-<!-- 
+    <!-- 
 	@name: Container Template
 	@view: General Layout
 -->
 
-<script type="text/x-jquery-tmpl" id="ContainerTmpl">
+    <script type="text/x-jquery-tmpl" id="ContainerTmpl">
   	<section id="sidebar" role="complementary">
 		<nav id="sideMenu" role="navigation">
 			<ul id="sideMainNav" class="nav-bar">
@@ -188,22 +235,22 @@
 	</div>
 </script>
 
-<!-- 
+    <!-- 
 	@name: Desktop Container Template
 	@view: General Layout
 -->
 
-<script type="text/x-jquery-tmpl" id="DesktopContainerTmpl">
+    <script type="text/x-jquery-tmpl" id="DesktopContainerTmpl">
 	<div class="biz-ex-layout row">
 		<div class="large-12 columns biz-ex-diagram-update-panel desktopContainer" id="updatePanelDiagram"></div>
 	</div>
 </script>
-<!--
+    <!--
 	@name: 			Diagram View
 	@view: 			Bizagi.App.Views.DiagramView
 	@description: 	Diagram Process / SubProcess visualization
 -->
-<script type="text/x-jquery-tmpl" id="DiagramViewTmpl">
+    <script type="text/x-jquery-tmpl" id="DiagramViewTmpl">
 	<div class='biz-ex-diagram-view'>
 		<div class="biz-ex-diagram-data">
 			<a class="button sidebar-button" id="sidebarButton" href="#sidebar">
@@ -263,13 +310,13 @@
 	</div>
 </script>
 
-<!--
+    <!--
 	@name: 			Diagram View
 	@view: 			Bizagi.App.Views.DiagramView
 	@description: 	Diagram Process / SubProcess visualization
 -->
 
-<script type="text/x-jquery-tmpl" id="ActionsTmpl">
+    <script type="text/x-jquery-tmpl" id="ActionsTmpl">
 	{{if presentationAction}}
 		<span class="biz-ex-mark-action"></span>
 	{{/if}}
@@ -354,13 +401,13 @@
 </script>
 
 
-<!--
+    <!--
 	@name: 			Diagram View
 	@view: 			Bizagi.App.Views.DiagramView
 	@description: 	Diagram Process / SubProcess visualization
 -->
 
-<script type="text/x-jquery-tmpl" id="ActionsProcessTmpl">
+    <script type="text/x-jquery-tmpl" id="ActionsProcessTmpl">
 	{{if presentationAction}}
 		<span class="biz-ex-mark-action"></span>
 	{{/if}}
@@ -441,11 +488,11 @@
 
 
 
-<!-- 
+    <!-- 
 	@name: 			Dialog View
 	@view: 			Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmpl">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmpl">
     <div id="myModal" class="reveal-modal biz-ex-height-modal">
         <div id="updateDialogContent">
         </div>
@@ -456,11 +503,11 @@
         </div>
     </div>
 </script>
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplImages">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplImages">
     <header class="biz-ex-dialog-header">
         <h2 class="biz-ex-dialog-name">${Bizagi.Util.getResource('presentationAction')}</h2>
     </header>
@@ -474,11 +521,11 @@
 
 
 
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplText">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplText">
     <header class="biz-ex-dialog-header">
         <h2 class="biz-ex-dialog-name">${Bizagi.Util.getResource('presentationAction')}</h2>
     </header>
@@ -490,11 +537,11 @@
 </script>
 
 
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplTextDescription">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplTextDescription">
     <header class="biz-ex-dialog-header">
         <h2 class="biz-ex-dialog-name">${Bizagi.Util.getResource('details')}</h2>
         <dl class="biz-ex-dialog-properties">
@@ -554,11 +601,11 @@
 </script>
 
 
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplHTML">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplHTML">
     <header class="biz-ex-dialog-header">
         <h2 class="biz-ex-dialog-name">${Bizagi.Util.removeSpecialCharacters(name)}</h2>
     </header>
@@ -569,8 +616,8 @@
     </div>
 </script>
 
-<script type="text/x-jquery-tmpl" id="DialogViewTmplPerformers">
-    
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplPerformers">
+
     <h2 class="biz-ex-performer-header biz-ex-dialog-name">${Bizagi.Util.removeSpecialCharacters(name)}</h2>
     <ul class="biz-ex-performers">
         {{each elements}} 
@@ -583,11 +630,11 @@
         {{/each}}
     </ul>
 </script>
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplProperties">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplProperties">
 
     <header class="biz-ex-dialog-header">
         <h1 class="biz-ex-title-process">${nameDiagram}</h1>
@@ -723,11 +770,11 @@
 </script>
 
 
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="empty">
+    <script type="text/x-jquery-tmpl" id="empty">
     <div class="alert-box biz-ex-alert-message">
         ${Bizagi.Util.getResource('emptyElement')}
     </div>
@@ -735,11 +782,11 @@
 
 
 
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplPropertiesPerformers">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplPropertiesPerformers">
 
     <div class="biz-ex-collapsible">
 
@@ -777,11 +824,11 @@
 
 </script>
 
-<!--
+    <!--
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplPropertiesDescription">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplPropertiesDescription">
 
     {{if isLarge}}
     <div class="biz-ex-collapsible">
@@ -826,11 +873,11 @@
         </div>
 </script>
 
-<!-- 
+    <!-- 
     @name:          Dialog View Container
     @view:          Bizagi.App.Views.DialogView
 -->
-<script type="text/x-jquery-tmpl" id="DialogViewTmplSubProcess">
+    <script type="text/x-jquery-tmpl" id="DialogViewTmplSubProcess">
 
     <header class="biz-ex-dialog-header">
         <h2 class="biz-ex-dialog-name">${Bizagi.Util.removeSpecialCharacters(name)}</h2>
@@ -918,22 +965,22 @@
     </div>
     
 </script>
-<!-- 
+    <!-- 
 	@name: 			Diagram View
 	@view: 			Bizagi.App.Views.ErrorView 
 	@description: 	Fires when ID diagram not exist 
 -->
-<script type="text/x-jquery-tmpl" id="ErrorViewTmpl">
+    <script type="text/x-jquery-tmpl" id="ErrorViewTmpl">
 	<div class='biz-ex-error-view'>
 		<h3>${Bizagi.Util.getResource('errorPage')}  </h3>
 		<div class='biz-ex-box-process'>${message}  ${id}</div>
 	</div>
 </script>
-<!-- 
+    <!-- 
     @name:      GUID View
     @view:      Bizagi.App.Views.TableView
 -->
-<script type="text/x-jquery-tmpl" id="GuidViewTmpl">
+    <script type="text/x-jquery-tmpl" id="GuidViewTmpl">
     <div class='row biz-ex-guid-view'>
         {{each pages}}
             {{tmpl($value) "GuidViewRecursiveTmpl"}} 
@@ -949,7 +996,7 @@
 </script>
 
 
-<script type="text/x-jquery-tmpl" id="GuidViewRecursiveTmpl">
+    <script type="text/x-jquery-tmpl" id="GuidViewRecursiveTmpl">
     <div class="large-6 columns biz-ex-guid-element">
         <div class="biz-ex-guid-wrapper">
             <div class="biz-ex-guid-img">
@@ -966,11 +1013,11 @@
 
 
 
-<!-- 
+    <!-- 
     @name: Header View Template
     @view: Bizagi.App.Views.HeaderView
 -->
-<script type="text/x-jquery-tmpl" id="HeaderViewTmpl">
+    <script type="text/x-jquery-tmpl" id="HeaderViewTmpl">
     <div class="large-3 columns biz-ex-logo">
         <a class="button sidebar-button show-for-small" id="toggleMenuButton" href="#sidebar">
             <img src="./libs/img/biz-ex-icon-menu.png" />
@@ -1003,7 +1050,7 @@
                 </li>
                 {{if !Bizagi.AppModel.personalized}}
                 <li>
-                    <a href="http://www.bizagi.com/" target="_blank" class="biz-ex-bizagi">${Bizagi.Util.getResource('visitBizagi')}</a>
+                    <a href="http://www.itpachuca.edu.mx/index.php" target="_blank" class="biz-ex-bizagi">Visite el Tecnologico de Pachuca</a>
                 </li>
                 {{/if}}
             </ul>
@@ -1011,18 +1058,18 @@
     </div>
 </script>
 
-<script type="text/x-jquery-tmpl" id="AlertViewTmpl">
+    <script type="text/x-jquery-tmpl" id="AlertViewTmpl">
     <div data-alert class="alert-box biz-ex-alert">
         <p class="biz-ex-alert-content">{{html message}}</p>
     </div>
 </script>
 
-<!-- 
+    <!-- 
 	@name: Navigation View Template
 	@view: Bizagi.App.Views.NavigationView
 	@role: Principal
 -->
-<script type="text/x-jquery-tmpl" id="HierarchyNavigationViewTmpl">
+    <script type="text/x-jquery-tmpl" id="HierarchyNavigationViewTmpl">
     <nav id="menu" role="navigation">
         <ul id="mainNav" class="nav-hierarchy">
             {{each hierarchyTree.categories}}
@@ -1046,12 +1093,12 @@
     <div class="biz-gradien-scroll"></div>
 </script>
 
-<!--
+    <!--
 	@name: 		Navigation View ( Iterate section )
 	@view: 		Bizagi.App.Views.NavigationView
 	@role: 		Diagram Link Iteration
 -->
-<script type="text/x-jquery-tmpl" id="HierarchyDiagramsNavigationSubViewTmpl">
+    <script type="text/x-jquery-tmpl" id="HierarchyDiagramsNavigationSubViewTmpl">
     <ul class="biz-ex-level biz-ex-is-hidden">
         {{each diagrams}}
         <li class="biz-ex-hierarchy-diagram">
@@ -1068,12 +1115,12 @@
         {{/each}}
     </ul>
 </script>
-<!-- 
+    <!-- 
 	@name: 		Navigation View ( Iterate Image Section )
 	@view: 		Bizagi.App.Views.NavigationView
 	@role: 		Image Process Iteration
 -->
-<script type="text/x-jquery-tmpl" id="HierarchyCategoriesNavigationSubViewTmpl">
+    <script type="text/x-jquery-tmpl" id="HierarchyCategoriesNavigationSubViewTmpl">
     <ul class="biz-ex-level biz-ex-is-hidden">
         {{each categories}}
         {{if diagrams.length > 0 || categories.length > 0}}
@@ -1093,12 +1140,12 @@
     </ul>
 </script>
 
-<!-- 
+    <!-- 
 	@name: Navigation View Template
 	@view: Bizagi.App.Views.NavigationView
 	@role: Principal
 -->
-<script type="text/x-jquery-tmpl" id="MenuToggleViewTmpl">
+    <script type="text/x-jquery-tmpl" id="MenuToggleViewTmpl">
     <div class="row biz-ex-menu-toggle">
         <div>
             <span class="biz-ex-menu-toggle-option-list">
@@ -1118,12 +1165,12 @@
     </div>
 </script>
 
-<!-- 
+    <!-- 
 	@name: Navigation View Template
 	@view: Bizagi.App.Views.NavigationView
 	@role: Principal
 -->
-<script type="text/x-jquery-tmpl" id="NavigationViewTmpl">
+    <script type="text/x-jquery-tmpl" id="NavigationViewTmpl">
     <nav id="menu" role="navigation">
         <ul id="mainNav" class="nav-bar">
             {{each pages}}
@@ -1148,12 +1195,12 @@
     <div class="biz-gradien-scroll"></div>
 </script>
 
-<!-- 
+    <!-- 
 	@name: Navigation View Template
 	@view: Bizagi.App.Views.NavigationView
 	@role: Clone from Proncipal Menu (for Devices)
 -->
-<script type="text/x-jquery-tmpl" id="CloneNavigationViewTmpl">
+    <script type="text/x-jquery-tmpl" id="CloneNavigationViewTmpl">
     {{each pages}}
     <li class="biz-ex-sub-page">
         <a href="diagram/${id}" class="biz-ex-navigate" title="${name}">
@@ -1170,12 +1217,12 @@
     </li>
     {{/each}}
 </script>
-<!-- 
+    <!-- 
 	@name: 		Navigation View ( Iterate section )
 	@view: 		Bizagi.App.Views.NavigationView
 	@role: 		Diagram Link Iteration
 -->
-<script type="text/x-jquery-tmpl" id="NavigationSubViewTmpl">
+    <script type="text/x-jquery-tmpl" id="NavigationSubViewTmpl">
     {{if subPages}}
     <ul>
         {{each subPages}}
@@ -1191,12 +1238,12 @@
     </ul>
     {{/if}}
 </script>
-<!-- 
+    <!-- 
 	@name: 		Navigation View ( Iterate Image Section )
 	@view: 		Bizagi.App.Views.NavigationView
 	@role: 		Image Process Iteration
 -->
-<script type="text/x-jquery-tmpl" id="NavigationSubProcessTmpl">
+    <script type="text/x-jquery-tmpl" id="NavigationSubProcessTmpl">
     {{if subPages}}
     <ul>
         {{each subPages}}
@@ -1212,10 +1259,10 @@
     </ul>
     {{/if}}
 </script>
-<!--
+    <!--
 	@name: 			Properties View
 -->
-<script type="text/x-jquery-tmpl" id="PropertiesViewTmpl">
+    <script type="text/x-jquery-tmpl" id="PropertiesViewTmpl">
 	<div>
 		{{if type === 'text'}}
 			{{if value}}
@@ -1253,7 +1300,7 @@
 	</div>
 </script>
 
-<script type="text/x-jquery-tmpl" id="PropertiesTableViewTmpl">
+    <script type="text/x-jquery-tmpl" id="PropertiesTableViewTmpl">
 	<div class="biz-ex-x-scroll">
 		<table class="biz-ex-table">
 			<thead>
@@ -1289,7 +1336,7 @@
 	</div>
 </script>
 
-<script type="text/x-jquery-tmpl" id="PropertiesDLViewTmpl">
+    <script type="text/x-jquery-tmpl" id="PropertiesDLViewTmpl">
 	<ul class="biz-ex-list">
 	{{each list}}
 		<li class="biz-ex-title">${$value.header}</li>
@@ -1306,7 +1353,7 @@
 	</ul>
 </script>
 
-<script type="text/x-jquery-tmpl" id="PropertiesDLRowViewTmpl">
+    <script type="text/x-jquery-tmpl" id="PropertiesDLRowViewTmpl">
 		{{each table}}
 			<dl class="biz-ex-property-tablelist small-12">
 				{{each $value}}
@@ -1328,7 +1375,7 @@
 		{{/each}}
 </script>
 
-<script type="text/x-jquery-tmpl" id="PropertiesValueViewTmpl">
+    <script type="text/x-jquery-tmpl" id="PropertiesValueViewTmpl">
 		{{if type === 'text'}}
 			{{if value}}
 				{{html Bizagi.Util.preserveHTML(value)}}
@@ -1384,11 +1431,11 @@
 		{{/if}}
 </script>
 
-<!-- 
+    <!-- 
     @name: Search View Template
     @view: Bizagi.App.Views.SearchView
 -->
-<script type="text/x-jquery-tmpl" id="SearchTmpl">
+    <script type="text/x-jquery-tmpl" id="SearchTmpl">
     <form class="biz-ex-search {{if PublishWebAttributes.showPerformersList}}biz-ex-is-performers{{/if}}">
         <div class="biz-ex-search-wrapper">
             <!-- span name="search-options" class="biz-ex-icon-search biz-ex-btn-search"></span -->
@@ -1407,12 +1454,12 @@
         </div>
     </form>
 </script>
-<!-- 
+    <!-- 
     @name: Search Results View Template
     @view: Bizagi.App.Views.SearchView
 -->
-<script type="text/x-jquery-tmpl" id="SearchTmplResults">
-    
+    <script type="text/x-jquery-tmpl" id="SearchTmplResults">
+
     <li>
         <a href="#" class="biz-ex-result">
             <i class="biz-ex-result-icon biz-ex-icon-${elementType}"></i>
@@ -1424,19 +1471,19 @@
 </script>
 
 
-<script type="text/x-jquery-tmpl" id="SearchTmplResultsAlert">
+    <script type="text/x-jquery-tmpl" id="SearchTmplResultsAlert">
     <div data-alert class="alert-box biz-ex-result-alert">
         <p class="biz-ex-result-alert-content">${Bizagi.Util.getResource('searchResults')}</p>
     </div>
 </script>
-<!--
+    <!--
     @name:      List/Table View
     @view:      Bizagi.App.Views.TableView
 -->
-<script type="text/x-jquery-tmpl" id="TableViewTmpl">
+    <script type="text/x-jquery-tmpl" id="TableViewTmpl">
     <div class='row biz-ex-table-view'></div>
 </script>
-<script type="text/x-jquery-tmpl" id="TableViewTmplItem">
+    <script type="text/x-jquery-tmpl" id="TableViewTmplItem">
     <div>
         {{if hasPublishedSubPages}}
         <a href="dialog/diagram/${id}" class='columns large-4 biz-ex-box-process biz-ex-dialog biz-ex-navigate' data-id="${id}">
@@ -1451,7 +1498,7 @@
     </div>
 </script>
 
-<script type="text/x-jquery-tmpl" id="TableViewTmplExPanel">
+    <script type="text/x-jquery-tmpl" id="TableViewTmplExPanel">
         <div>
             <div class="biz-ex-panel">
                 <div class="biz-ex-img">
@@ -1491,306 +1538,307 @@
         </div>
 </script>
 
-<div id="lessParser" class="biz-ex-hide"> 
+    <div id="lessParser" class="biz-ex-hide">
 
-/*******************************************************************************
-    @theme: Export Process Viewer
-    @version: 2.0.0
-    @author: UX TEAM at Bizagi
-    @description: Custom theme CSS rules for Process Viewer
-********************************************************************************/
+        /*******************************************************************************
+        @theme: Export Process Viewer
+        @version: 2.0.0
+        @author: UX TEAM at Bizagi
+        @description: Custom theme CSS rules for Process Viewer
+        ********************************************************************************/
 
-/* ==========================================================================
-   Export process viewer components
-   ========================================================================== */
+        /* ==========================================================================
+        Export process viewer components
+        ========================================================================== */
 
-/* General
-   ========================================================================== */
+        /* General
+        ========================================================================== */
 
-::-webkit-input-placeholder { color: @navigation-link; }
+        ::-webkit-input-placeholder { color: @navigation-link; }
 
-::-moz-placeholder { color: @navigation-link; }
+        ::-moz-placeholder { color: @navigation-link; }
 
-:-ms-input-placeholder { color: @navigation-link; }
+        :-ms-input-placeholder { color: @navigation-link; }
 
-a{
-    color:@navigation-link;
-}
+        a{
+        color:@navigation-link;
+        }
 
-a:hover{
-    color:darken(@navigation-link, 30%) !important;
-}
+        a:hover{
+        color:darken(@navigation-link, 30%) !important;
+        }
 
-h1, h2, h3, h4, h5, h6,
-p, span, div,
-body, html{
-    font-family: @font-family, Helvetica, Arial, sans-serif;
-}
+        h1, h2, h3, h4, h5, h6,
+        p, span, div,
+        body, html{
+        font-family: @font-family, Helvetica, Arial, sans-serif;
+        }
 
 
-.biz-ex-dialog-content {
-    font-family: @font-family, Helvetica, Arial, sans-serif !important;
-
-    ul,
-    li,
-    span,
-    table,
-    td,
-    p,
-    h2,
-    h1,
-    div {
+        .biz-ex-dialog-content {
         font-family: @font-family, Helvetica, Arial, sans-serif !important;
-    }
-}
 
-#app-container-view { background: lighten(@navigation, 5%); }
+        ul,
+        li,
+        span,
+        table,
+        td,
+        p,
+        h2,
+        h1,
+        div {
+        font-family: @font-family, Helvetica, Arial, sans-serif !important;
+        }
+        }
 
-.ui-tooltip.biz-ex-tooltip,
-.ui-tooltip.biz-ex-tooltip-nav {
-    background: @content;
-    color: @content-text;
-}
+        #app-container-view { background: lighten(@navigation, 5%); }
 
-.ui-tooltip.biz-ex-tooltip:after { border-left-color: @content; }
+        .ui-tooltip.biz-ex-tooltip,
+        .ui-tooltip.biz-ex-tooltip-nav {
+        background: @content;
+        color: @content-text;
+        }
 
-.ui-tooltip.biz-ex-tooltip-nav:after { border-right-color: @content; }
+        .ui-tooltip.biz-ex-tooltip:after { border-left-color: @content; }
 
-.biz-gradien-scroll {
-    background: -webkit-linear-gradient(top, transparent 0%, darken(@navigation, 10%) 100%);
-    background:    -moz-linear-gradient(top, transparent 0%, darken(@navigation, 10%) 100%);
-    background: linear-gradient(to bottom, transparent 0%, darken(@navigation, 10%) 100%);
-}
+        .ui-tooltip.biz-ex-tooltip-nav:after { border-right-color: @content; }
 
-/* Header
-   ========================================================================== */
+        .biz-gradien-scroll {
+        background: -webkit-linear-gradient(top, transparent 0%, darken(@navigation, 10%) 100%);
+        background: -moz-linear-gradient(top, transparent 0%, darken(@navigation, 10%) 100%);
+        background: linear-gradient(to bottom, transparent 0%, darken(@navigation, 10%) 100%);
+        }
 
-   .bz-icon{
-       color:@icon-color;
-   }
+        /* Header
+        ========================================================================== */
+
+        .bz-icon{
+        color:@icon-color;
+        }
 
 
 
-.biz-ex-header-view {
-    border-bottom-color: @header-border;
-    a {
+        .biz-ex-header-view {
+        border-bottom-color: @header-border;
+        a {
         color: @header-link;
         &:hover { color: darken(@header-link, 5%); }
-    }
-}
+        }
+        }
 
-.lt-ie9 .biz-ex-header-view{
-	background:darken(@header, 6%);
-}
+        .lt-ie9 .biz-ex-header-view{
+        background:darken(@header, 6%);
+        }
 
-.biz-ex-logo {
-    background:darken(@header, 6%);
-    border-right-color: @header-border;
-    border-bottom-color: @header-border;
-}
+        .biz-ex-logo {
+        background:darken(@header, 6%);
+        border-right-color: @header-border;
+        border-bottom-color: @header-border;
+        }
 
-.biz-ex-top-nav {
-    background: darken(@header, 6%);
-}
+        .biz-ex-top-nav {
+        background: darken(@header, 6%);
+        }
 
-.biz-ex-back-process.biz-ex-navigate {
-    border-color: @header-border;
-    background: transparent;
-}
+        .biz-ex-back-process.biz-ex-navigate {
+        border-color: @header-border;
+        background: transparent;
+        }
 
-.biz-ex-title-diagram { color: @header-link; }
+        .biz-ex-title-diagram { color: @header-link; }
 
-/* Navigation sidebar
-   ========================================================================== */
+        /* Navigation sidebar
+        ========================================================================== */
 
-#sidebar,
-.biz-ex-navigation-left { background: darken(@navigation, 5%); }
+        #sidebar,
+        .biz-ex-navigation-left { background: darken(@navigation, 5%); }
 
-.biz-ex-navigation-left { border-right-color: @navigation-border; }
+        .biz-ex-navigation-left { border-right-color: @navigation-border; }
 
-.biz-ex-search-input,
-.biz-ex-icon-search { background-color: darken(@navigation, 10%); }
+        .biz-ex-search-input,
+        .biz-ex-icon-search { background-color: darken(@navigation, 10%); }
 
-.biz-ex-search-input { color: @navigation-link; }
+        .biz-ex-search-input { color: @navigation-link; }
 
-.nav-bar {
-    border-top-color: @navigation-border;
-    .biz-ex-sub-page a { border-bottom-color: @navigation-border; }
-    .biz-ex-sub-page.active { background: fade(@navigation-link, 25%); }
-    a {
+        .nav-bar {
+        border-top-color: @navigation-border;
+        .biz-ex-sub-page a { border-bottom-color: @navigation-border; }
+        .biz-ex-sub-page.active { background: fade(@navigation-link, 25%); }
+        a {
         color: @navigation-link;
         &:hover {
-            background: darken(@navigation, 10%);
-            color: darken(@navigation-link, 5%);
+        background: darken(@navigation, 10%);
+        color: darken(@navigation-link, 5%);
         }
-    }
-}
+        }
+        }
 
-.biz-ex-active.active > a {
-    border-top-color: @navigation-border !important;
-    color: darken(@navigation-link, 40%);
-}
+        .biz-ex-active.active > a {
+        border-top-color: @navigation-border !important;
+        color: darken(@navigation-link, 40%);
+        }
 
-.biz-ex-active.active .biz-ex-ind-container,
-.biz-ex-ind-container { border-right-color: transparent; }
+        .biz-ex-active.active .biz-ex-ind-container,
+        .biz-ex-ind-container { border-right-color: transparent; }
 
-/* Search
-   ========================================================================== */
+        /* Search
+        ========================================================================== */
 
-.biz-ex-search-options {
-    box-shadow: 0 1px 1px darken(@content, 25%);
-    background: fade(@content, 90%);
-}
+        .biz-ex-search-options {
+        box-shadow: 0 1px 1px darken(@content, 25%);
+        background: fade(@content, 90%);
+        }
 
-.biz-ex-search-options:after {
-    border-bottom-color: fade(@content, 90%);
-}
+        .biz-ex-search-options:after {
+        border-bottom-color: fade(@content, 90%);
+        }
 
-.ui-autocomplete {
-    box-shadow: 0 1px 1px darken(@content, 25%);
-    background: fade(@content, 90%);
-}
+        .ui-autocomplete {
+        box-shadow: 0 1px 1px darken(@content, 25%);
+        background: fade(@content, 90%);
+        }
 
-.biz-ex-result-name,
-.biz-ex-result-container {
-    color: @content-text !important;
-}
+        .biz-ex-result-name,
+        .biz-ex-result-container {
+        color: @content-text !important;
+        }
 
-.biz-ex-search-option { color: @navigation-link; }
+        .biz-ex-search-option { color: @navigation-link; }
 
-.biz-ex-search-option.biz-ex-active { color: @content-text; }
+        .biz-ex-search-option.biz-ex-active { color: @content-text; }
 
-/* Content
-   ========================================================================== */
+        /* Content
+        ========================================================================== */
 
-.biz-ex-diagram-data { background: @content; }
+        .biz-ex-diagram-data { background: @content; }
 
-.no-touch .bix-ex-figure-panel {
-    border-color: @content-border;
-    background: @content;
-}
+        .no-touch .bix-ex-figure-panel {
+        border-color: @content-border;
+        background: @content;
+        }
 
-h1, h2, h3, h4, h5, h6,
-.biz-ex-diagram-desc-container { color: @content-text; }
+        h1, h2, h3, h4, h5, h6,
+        .biz-ex-diagram-desc-container { color: @content-text; }
 
-.biz-ex-img,
-.biz-ex-diagram-desc:last-child { border-color: lighten(@content-border, 25%); }
+        .biz-ex-img,
+        .biz-ex-diagram-desc:last-child { border-color: lighten(@content-border, 25%); }
 
 
-.biz-ex-expand-button-span {
-    border-color: @navigation-border !important;
-    background: @content;
-    color:@navigation-link;
-}
+        .biz-ex-expand-button-span {
+        border-color: @navigation-border !important;
+        background: @content;
+        color:@navigation-link;
+        }
 
-.biz-ex-badge{
-    border-color: @navigation-border !important;
-}
+        .biz-ex-badge{
+        border-color: @navigation-border !important;
+        }
 
-.biz-ex-navigate:hover .biz-ex-expand-button-span{
-    color:lighten(@navigation-link, 30%) !important;
-}
+        .biz-ex-navigate:hover .biz-ex-expand-button-span{
+        color:lighten(@navigation-link, 30%) !important;
+        }
 
-.biz-ex-expand-button-span::after{
-    border-top-color: lighten(@navigation-link, 30%) !important;
-}
+        .biz-ex-expand-button-span::after{
+        border-top-color: lighten(@navigation-link, 30%) !important;
+        }
 
-.no-touch .bix-ex-figure-panel:hover{
-    border-color: @hover-dashboard-panel;
-}
+        .no-touch .bix-ex-figure-panel:hover{
+        border-color: @hover-dashboard-panel;
+        }
 
-/* Modal window
-   ========================================================================== */
+        /* Modal window
+        ========================================================================== */
 
-.reveal-modal { border-color: @content-border }
+        .reveal-modal { border-color: @content-border }
 
-.biz-ex-dialog-header { background: lighten(@header, 25%); }
+        .biz-ex-dialog-header { background: lighten(@header, 25%); }
 
-.biz-ex-dialog-details > dt, 
-.biz-ex-dialog-details > dd,
-.biz-ex-dialog-properties .biz-ex-dialog-process-title,
-.biz-ex-performers-list-as-contact span,
-.biz-ex-performers-list-as-contact span:nth-child(even) { color: @content-text; }
+        .biz-ex-dialog-details > dt,
+        .biz-ex-dialog-details > dd,
+        .biz-ex-dialog-properties .biz-ex-dialog-process-title,
+        .biz-ex-performers-list-as-contact span,
+        .biz-ex-performers-list-as-contact span:nth-child(even) { color: @content-text; }
 
-.biz-ex-dialog-line { border-color: @content-border; }
+        .biz-ex-dialog-line { border-color: @content-border; }
 
-.biz-ex-performer-tag { background: darken(@content, 10%); }
+        .biz-ex-performer-tag { background: darken(@content, 10%); }
 
-.biz-ex-dialog-content.biz-ex-dialog-properties {
-    bottom: 4px;
-    border-top-color: @content-border;
-}
+        .biz-ex-dialog-content.biz-ex-dialog-properties {
+        bottom: 4px;
+        border-top-color: @content-border;
+        }
 
-.alert-box {
-    background: darken(@content, 10%) !important;
-    color: @content-text;
-}
-
-.alert-box.biz-ex-alert-message{
-    background: lighten(@alert-box-message, 40%) !important;
-    color: darken(@alert-box-message, 20%);
-}
-
-/* GUID list
-   ========================================================================== */
-
-.biz-ex-guid-wrapper { 
-    border-color: @content-border;
-    background: @content;
-    color: @content-text;
-}
-
-.biz-ex-guid-img { border-color: lighten(@content-border, 25%); }
-
-/* Zoom
-   ========================================================================== */
-
-.zoom-hotspot:hover {
-    border-color: transparent;
-    background-color: fade(@navigation, 50%);
-}
-
-.zoom-pane-preview {
-    border-color: @header-border; 
-}
-
-.zoom-pane-preview .zoom-pane-square {
-    border-color: @navigation-border;
-    background: fade(@navigation, 50%);
-}
-
-.zoom-pane-preview .zoom-pane-square.ui-draggable-dragging {
-    border-color: @header-border;
-    background: fade(@header, 50%);
-}
-
-.zoom-error-image{
-    color: @content-text;
-    span{
+        .alert-box {
+        background: darken(@content, 10%) !important;
         color: @content-text;
-    }
-}
+        }
 
-/* ==========================================================================
-   Mixins
-   ========================================================================== */
+        .alert-box.biz-ex-alert-message{
+        background: lighten(@alert-box-message, 40%) !important;
+        color: darken(@alert-box-message, 20%);
+        }
 
-.gradient(@start: #EEE, @stop: #FFF) {
-    background: @start;
-    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, @stop), color-stop(100%, @start));
-    background-image: -webkit-linear-gradient(@stop, @start);
-    background-image: -moz-linear-gradient(@stop, @start);
-    background-image: -o-linear-gradient(@stop, @start);
-    background-image: linear-gradient(@stop, @start);
-}
+        /* GUID list
+        ========================================================================== */
+
+        .biz-ex-guid-wrapper {
+        border-color: @content-border;
+        background: @content;
+        color: @content-text;
+        }
+
+        .biz-ex-guid-img { border-color: lighten(@content-border, 25%); }
+
+        /* Zoom
+        ========================================================================== */
+
+        .zoom-hotspot:hover {
+        border-color: transparent;
+        background-color: fade(@navigation, 50%);
+        }
+
+        .zoom-pane-preview {
+        border-color: @header-border;
+        }
+
+        .zoom-pane-preview .zoom-pane-square {
+        border-color: @navigation-border;
+        background: fade(@navigation, 50%);
+        }
+
+        .zoom-pane-preview .zoom-pane-square.ui-draggable-dragging {
+        border-color: @header-border;
+        background: fade(@header, 50%);
+        }
+
+        .zoom-error-image{
+        color: @content-text;
+        span{
+        color: @content-text;
+        }
+        }
+
+        /* ==========================================================================
+        Mixins
+        ========================================================================== */
+
+        .gradient(@start: #EEE, @stop: #FFF) {
+        background: @start;
+        background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, @stop), color-stop(100%, @start));
+        background-image: -webkit-linear-gradient(@stop, @start);
+        background-image: -moz-linear-gradient(@stop, @start);
+        background-image: -o-linear-gradient(@stop, @start);
+        background-image: linear-gradient(@stop, @start);
+        }
 
 
 
-@import "theme-client.css";
+        @import "theme-client.css";
 
-</div>
-	<div id="image-renderer" style="position: absolute; width: 100000px; opacity: 0;"></div>
+    </div>
+    <div id="image-renderer" style="position: absolute; width: 100000px; opacity: 0;"></div>
 
 
-	</body>
+</body>
+
 </html>
